@@ -3,7 +3,7 @@
 # Не можна використовувати int(), float(), Decimal() або будь-яке інше явне чи неявне приведення рядку до числа.
 # Підказка: дивіться таблицю ASCII, зверніть увагу на коди символів, згадайте, як їх дістати, маючи один символ.
 
-number_3 = input('Введить трьохзначне число: ')
+number_3 = input('Введить тризначне число: ')
 
 
 def sum_num_ord(number):
@@ -12,5 +12,5 @@ def sum_num_ord(number):
     num_ord_3 = ord(number[2]) - ord('0')
     return num_ord_1 + num_ord_2 + num_ord_3
 
+print('Сума цифр даного тризначного числа дорівнює:', sum_num_ord(number_3))
 
-print(sum_num_ord(number_3))
