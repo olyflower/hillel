@@ -6,7 +6,7 @@ import math
 
 
 def cone_square_and_volume(radius, height):
-    square = round((math.pi * radius * ((radius + (radius ** 2 + height ** 2)) ** 0.5)), 3)
+    square = round((math.pi * radius * (radius + (radius ** 2 + height ** 2) ** 0.5)), 3)
     volume = round(((1 / 3) * math.pi * (radius ** 2) * height), 3)
     return square, volume
 
