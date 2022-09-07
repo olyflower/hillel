@@ -2,12 +2,12 @@
 # Написати функцію, що визначає чи введене число є парним.
 
 
-def number_even_odd(number):
-    if number % 2 == 0:
-        print('Число є парним')
-    else:
-        print('Число є непарним')
+def is_even(number):
+    return number % 2 == 0
 
 
 a = int(input('Введить число: '))
-number_even_odd(a)
+if is_even(a):
+    print('Парне число')
+else:
+    print('Непарне число')
