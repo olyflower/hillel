@@ -18,8 +18,9 @@ def solve_quadratic_equation(a, b, c):
         x1 = (-b + d ** 0.5) / (2 * a)
         x2 = (-b - d ** 0.5) / (2 * a)
         print('Корені рівняння є комплексними числами:')
-        print(x1)
-        print(x2)
+        print("{:g}".format(x1))
+        print("{:g}".format(x2))
+
 
 
 a = float(input('Введить коефіціент а: '))
@@ -27,5 +28,3 @@ b = float(input('Введить коефіціент b: '))
 c = float(input('Введить коефіціент с: '))
 
 solve_quadratic_equation(a, b, c)
-
-

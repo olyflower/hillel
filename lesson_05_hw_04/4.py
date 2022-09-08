@@ -5,11 +5,10 @@
 # але не кратний 100, а також якщо він кратний 400.
 
 def year(number):
-    return number % 4 == 0 or number % 400 == 0 and number % 100 != 0
+    return (number % 100 != 0 or number % 400 == 0) and number % 4 == 0
 
 
 a = int(input('Введить рік: '))
-
 
 if year(a):
     print('YES')

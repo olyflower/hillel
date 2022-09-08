@@ -23,13 +23,9 @@ res = solve_quadratic_equation(a, b, c)
 
 if res[0] is None and res[1] is None:
     print('Немає рішень')
-elif res[0] is None:
-    print('Корінь рівняння:', round(res[1], 3))
 elif res[1] is None:
     print('Корінь рівняння:', round(res[0], 3))
 else:
     print('Корені рівняння:')
     print(round(res[0], 3))
     print(round(res[1], 3))
-
-

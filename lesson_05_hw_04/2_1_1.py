@@ -23,8 +23,8 @@ res = solve_quadratic_equation(a, b, c)
 
 if res[0] < 0:
     print('Корені рівняння є комплексними числами:')
-    print(res[1])
-    print(res[2])
+    print(round(res[1].real, 2) + round(res[1].imag, 2) * 1j)
+    print(round(res[2].real, 2) + round(res[2].imag, 2) * 1j)
 elif res[0] == 0 and res[1] is None:
     print('Корінь рівняння: ', round(res[2], 3))
 elif res[0] == 0 and res[2] is None:
