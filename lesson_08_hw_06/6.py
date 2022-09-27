@@ -12,28 +12,35 @@
 Повторюємо з пункту 2 допоки не закінчаться неперемішані символи
 def pemrtuate(text):  # returns permuted text
     pass"""
-import string
+
 import random
 
+
+def pemrtuate(text):
+    text = text.split()
+    text_res = ''
+
+    for idx, word in enumerate(text):
+        i = 1
+        n = 3
+        word_new = word[0]
+
+        while n > 1:
+            n = 3 if len(word) - i - 1 > 3 else len(word) - i - 1
+            slice = list(word[i:i+n])
+            random.shuffle(slice)
+            word_new += ''.join(slice)
+            i += n
+        if len(word) > 1:
+            word_new += word[-1]
+        if idx == len(text) - 1:
+            text_res += word_new
+        else:
+            text_res += word_new + ' '
+    return text_res
+
+
 my_list = 'За результатами досліджень одного англійського університету, не має значення,' \
-          ' в якому порядку розташовані літери у слові.'
-print(my_list)
-my_list = my_list.translate(str.maketrans('', '', string.punctuation))
-my_list = my_list.split()
-text_res = ''
+              ' в якому порядку розташовані літери у слові.'
 
-for word in my_list:
-    i = 1
-    n = 3
-    word_new = word[0]
-
-    while n > 1:
-        n = 3 if len(word) - i - 1 > 3 else len(word) - i - 1
-        slice = list(word[i:i+n])
-        random.shuffle(slice)
-        word_new += ''.join(slice)
-        i += n
-    if len(word) > 1:
-        word_new += word[-1]
-    text_res += word_new + ' '
-print(text_res.strip())
+print(pemrtuate(my_list))
