@@ -14,21 +14,14 @@ def gen_password():
             if lst[i] == lst[i+1]:
                 return True
 
-
     list_password = '_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     password = ''.join(random.choice(list_password) for _ in range(8))
-    print(password)
-    print(letters_eq(password))
-    print(list(map(str.isdigit, password)))
-    print(list(map(str.isupper, password)))
-    print(list(map(str.islower, password)))
-
     while (not any(map(str.isdigit, password)) or
            not any(map(str.isupper, password)) or
            not any(map(str.islower, password)) or
            letters_eq(password)):
         password = ''.join(random.choice(list_password) for _ in range(8))
-    print('Пароль:', password)
+    return password
 
 
-gen_password()
+print(gen_password())

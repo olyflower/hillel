@@ -28,7 +28,8 @@ def pemrtuate(text):
         while n > 1:
             n = 3 if len(word) - i - 1 > 3 else len(word) - i - 1
             slice = list(word[i:i+n])
-            random.shuffle(slice)
+            while slice == list(word[i:i+n]) and n > 1:
+                random.shuffle(slice)
             word_new += ''.join(slice)
             i += n
         if len(word) > 1:

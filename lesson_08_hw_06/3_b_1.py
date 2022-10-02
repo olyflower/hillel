@@ -8,7 +8,7 @@ def first(elem):
     return str(elem)[0]
 
 
-my_list = [472, 326, 1, '1101000', 9, '20', 863, '0']
+my_list = [472, 326, 1, '1101000', 9, '20', 863, '0', 99]
 
 my_list_s = sorted(my_list, key=first)
 
