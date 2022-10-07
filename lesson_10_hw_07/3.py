@@ -2,7 +2,8 @@
 В програмі phone_book (файл скопіювати в свій репозиторій і вже там редагувати) втілити наступні функції:"""
 
 import pickle
-
+from statistics import mean
+from operator import itemgetter
 
 running = True
 
@@ -105,6 +106,7 @@ def find_entry_birthday_phonebook():
     if not found:
         printError("Not found!!")
 
+
 #------------------------------------------------------------------------------
 def delete_entry_name_phonebook():
     name = str(input("    Enter name: "))
@@ -122,12 +124,12 @@ def delete_entry_name_phonebook():
 
 #------------------------------------------------------------------------------
 def count_all_entries_in_phonebook():
-    print("Total number of entries: ", len(phone_book))
+    print("Total number of entries:", len(phone_book))
 
 
 #------------------------------------------------------------------------------
 def print_phonebook_by_age():
-    print(sorted(phone_book, key=lambda value: value['age']))
+    print(sorted(phone_book, key=itemgetter("age")))
 
 
 #------------------------------------------------------------------------------
@@ -139,8 +141,8 @@ def increase_age():
 
 #------------------------------------------------------------------------------
 def avr_age_of_all_persons():
-    result = list(map(lambda x: x['age'], phone_book))
-    print(sum(result) / len(result))
+    result = mean(list(map(itemgetter("age"), phone_book)))
+    print('Average age of all persons:', result)
 
 
 #------------------------------------------------------------------------------

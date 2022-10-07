@@ -13,15 +13,15 @@ def group_by_surname(list_of_enrollees):
     groups = {'A-I': 0, 'J-P': 0, 'Q-T': 0, 'U-Z': 0}
     for student in list_of_enrollees:
         first_letter = student.split()[1][0]
-        if ord('A') <= ord(first_letter) <= ord('I'):
+        if 'A' <= first_letter <= 'I':
             groups['A-I'] += 1
-        elif ord('J') <= ord(first_letter) <= ord('P'):
+        elif 'J' <= first_letter <= 'P':
             groups['J-P'] += 1
-        elif ord('Q') <= ord(first_letter) <= ord('T'):
+        elif 'Q' <= first_letter <= 'T':
             groups['Q-T'] += 1
-        elif ord('U') <= ord(first_letter) <= ord('Z'):
+        elif 'U' <= first_letter <= 'Z':
             groups['U-Z'] += 1
-    return groups
+    return list(groups.values())
 
 
 student_lst = ['Mark One', 'Tom Two', 'Mary Five', 'Will Smith', 'Jay Zee']

@@ -1,0 +1,12 @@
+.com
+.net
+.biz
+.info
+.org
+.tel
+.travel
+.aero
+.pro
+.xxx
+.name
+.mobi
