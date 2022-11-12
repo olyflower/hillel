@@ -43,8 +43,8 @@ class Store(SaveToFileMixin):
         """
         result = {}
         for product in self.in_stock:
-            name = type(product).__name__
-            if name in result.keys():
+            name = product.name
+            if name in result:
                 result[name] += 1
             else:
                 result[name] = 1
@@ -58,8 +58,8 @@ class Store(SaveToFileMixin):
         """
         result = {}
         for product in self.sold:
-            name = type(product).__name__
-            if name in result.keys():
+            name = product.name
+            if name in result:
                 result[name] += product.price * COEFFICIENT
             else:
                 result[name] = product.price * COEFFICIENT
@@ -104,7 +104,8 @@ class Mayonnaise(Product):
         self.fat_content = fat_content
 
     def __eq__(self, other):
-        return self.name == other.name and self.price == other.price \
+        return self.name == other.name \
+               and self.price == other.price \
                and self.weight == other.weight \
                and self.fat_content == other.fat_content
 
@@ -117,7 +118,8 @@ class Ketchup(Product):
         self.amount_of_dry_matter = amount_of_dry_matter
 
     def __eq__(self, other):
-        return self.name == other.name and self.price == other.price \
+        return self.name == other.name \
+               and self.price == other.price \
                and self.weight == other.weight \
                and self.amount_of_dry_matter == other.amount_of_dry_matter
 
@@ -130,7 +132,8 @@ class Mustard(Product):
         self.bitterness = bitterness
 
     def __eq__(self, other):
-        return self.name == other.name and self.price == other.price \
+        return self.name == other.name \
+               and self.price == other.price \
                and self.weight == other.weight \
                and self.bitterness == other.bitterness
 
